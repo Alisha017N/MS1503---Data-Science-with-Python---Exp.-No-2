@@ -74,21 +74,29 @@ data = {
 #Step 2: Convert to a Pandas DataFrame
 
 df = pd.DataFrame(data)
+
 print("---- CUSTOMER DATASET ----")
+
 print(df)
 
 #Step 3: Basic exploration
 
 print("\nShape of Dataset:", df.shape)
+
 print("Columns:", df.columns.tolist())
+
 print("\n---- Dataset Info ----")
+
 print(df.info())
+
 print("\n---- Summary Statistics ----")
+
 print(df.describe())
 
 #Step 4: Display first and last few records
 
 print("\nFirst 3 Records:\n", df.head(3))
+
 print("\nLast 3 Records:\n", df.tail(3))
 
 #Step 5: Sort customers by Annual Income (descending)
@@ -108,21 +116,25 @@ print(
 #Step 7: Group customers by Region and find average Income and Spending Score
 
 print("\nRegion-wise Average Income and Spending Score:")
+
 print(df.groupby("Region")[["Annual_Income", "Spending_Score"]].mean())
 
 #Step 8: Count number of customers in each Region
 
 print("\nCustomer Count per Region:")
+
 print(df["Region"].value_counts())
 
 #Step 9: Identify customer with maximum Spending Score
 
 max_spender = df.loc[df["Spending_Score"].idxmax()]
+
 print("\nTop Spender Details:\n", max_spender)
 
 #Step 10: Compute overall averages
 
 print("\nAverage Annual Income:", df["Annual_Income"].mean())
+
 print("Average Spending Score:", df["Spending_Score"].mean())
 
 ## Output
